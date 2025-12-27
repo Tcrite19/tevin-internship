@@ -21,8 +21,6 @@ export default function Trending() {
 
       setLoading(false);
 
-      console.log(trendingData);
-      console.log(trending);
     } catch (error) {
       alert(error);
     }
@@ -35,7 +33,6 @@ export default function Trending() {
 
   return (
     <section id="trending">
-      <button onClick={() => setLoading(!loading)}>Button</button>
       <div className="container">
         <div className="row trending__row">
           <div className="trending__header">
