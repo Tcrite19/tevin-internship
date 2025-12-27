@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import VerifiedIcon from "../../assets/verified.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +20,6 @@ export default function SelectedCollection() {
 
       setLoading(false);
 
-      console.log(collection);
     } catch (error) {
       alert(error);
     }
