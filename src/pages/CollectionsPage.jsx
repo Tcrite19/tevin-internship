@@ -13,7 +13,7 @@ export default function CollectionsPage() {
         <h1 className="collections-page__title">Collections</h1>
         <div className="collections__body">
           {new Array(12).fill(0).map((_, index) => (
-            <div className="collection-column">
+            <div className="collection-column" key={index}>
               <Link to="/collection" key={index} className="collection">
                 <img
                   src="https://i.seadn.io/gcs/files/a5414557ae405cb6233b4e2e4fa1d9e6.jpg?auto=format&dpr=1&w=1920"
