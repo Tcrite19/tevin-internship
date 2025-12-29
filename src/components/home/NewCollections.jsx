@@ -56,7 +56,7 @@ export default function NewCollections() {
                   ))
                 : newCollection.map((e, index) => (
                     <SwiperSlide key={index}>
-                      <CollectionCard collection={e} />
+                      <CollectionCard collection={e} id={"collectionId"}/>
                     </SwiperSlide>
                   ))}
             </Swiper>

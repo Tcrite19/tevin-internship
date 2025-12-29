@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CollectionCard = ({ collection }) => {
+const CollectionCard = ({ collection, id }) => {
+    
   return (
-      <Link to={`/collection/${collection.collectionId}`} className="collection">
+      <Link to={`/collection/${collection[id]}`} className="collection">
         <img src={collection.imageLink} alt="" className="collection__img" />
         <div className="collection__info">
           <h3 className="collection__name">{collection.title}</h3>
