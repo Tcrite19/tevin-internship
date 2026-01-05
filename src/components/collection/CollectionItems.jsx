@@ -86,7 +86,7 @@ export default function CollectionItems({ collection, loading }) {
               ))
             : sortedItemList?.slice(0, listLength).map((e, index) => (
                 <div key={index} className="item-column">
-                  <Link to={"/item"} key={index} className="item">
+                  <Link to={`/item/${e.itemId}`} key={index} className="item">
                     <figure className="item__img__wrapper">
                       <img src={e?.imageLink} alt="" className="item__img" />
                     </figure>
