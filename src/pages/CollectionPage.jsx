@@ -10,7 +10,7 @@ export default function CollectionPage() {
   const [collection, setCollection] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  async function fetchCollection() {
+ async function fetchCollection() {
     try {
       const { data } = await axios.get(
         `https://remote-internship-api-production.up.railway.app/collection/${id}`
@@ -24,7 +24,7 @@ export default function CollectionPage() {
     } catch (error) {
       alert(error);
     }
-  }
+  } 
 
   useEffect(() => {
     fetchCollection();
