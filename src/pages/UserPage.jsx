@@ -53,7 +53,6 @@ export default function UserPage() {
 
   return (
     <>
-      <button onClick={() => setLoading(!loading)}>Button</button>
       {loading ? (
         <>
           <header id="user-header">

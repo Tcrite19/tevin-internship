@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Skeleton from "../ui/Skeleton";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import CollectionCard from "../ui/CollectionCard";
 import CollectionCardSkeleton from "../ui/CollectionCardSkeleton";
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 export default function PopularCollections() {
   const [popularCollection, setPopularCollection] = useState([]);
@@ -23,8 +23,6 @@ export default function PopularCollections() {
       setPopularCollection(popularCollectionData);
 
       setLoading(false);
-
-      console.log(popularCollectionData);
     } catch (error) {
       alert(error);
     }
@@ -33,14 +31,23 @@ export default function PopularCollections() {
   useEffect(() => {
     fetchPopularCollection();
     setLoading(true);
+    AOS.init({
+      duration: 1000,
+    });
   }, []);
 
   return (
     <section id="popular-collections">
       <div className="container">
         <div className="row">
-          <h2 className="popular-collections__title">Popular Collections</h2>
-          <div className="popular-collections__body">
+          <h2 className="popular-collections__title" data-aos="fade-up">
+            Popular Collections
+          </h2>
+          <div
+            className="popular-collections__body"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <Swiper
               navigation={true}
               modules={[Navigation]}

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SelectedCollection from "../components/home/SelectedCollection";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import CollectionCard from "../components/ui/CollectionCard";
 import CollectionCardSkeleton from "../components/ui/CollectionCardSkeleton";
@@ -22,7 +20,6 @@ export default function CollectionsPage() {
 
       setLoading(false);
 
-      console.log(collections.length);
     } catch (error) {
       alert(error);
     }
@@ -38,7 +35,6 @@ export default function CollectionsPage() {
     <div className="container">
       <div className="row">
         <h1 className="collections-page__title">Collections</h1>
-        <button onClick={() => setLoading(!loading)}>Button</button>
         <div className="collections__body">
           {loading
             ? new Array(12).fill(0).map((_, index) => (
