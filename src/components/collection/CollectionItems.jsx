@@ -22,7 +22,6 @@ export default function CollectionItems({ collection, loading }) {
     } else {
       setSortedItemList(collection?.items);
     }
-    console.log(collection?.items);
   }
 
 

@@ -32,7 +32,6 @@ export default function SelectedCollection() {
 
   return (
     <header>
-      <button onClick={() => setLoading(!loading)}>button</button>
       {loading ? (
         <div className="selected-collection">
           <Skeleton width="100%" height="100%" />

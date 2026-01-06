@@ -81,14 +81,6 @@ const RecommendedItemsSkeleton = () => {
                   ))}
                 </Swiper>
               </div>
-              <div className="recommended-items__footer">
-                {/* <Link
-                  to={`/collection/${collectionId}`}
-                  className="recommended-items__footer__button"
-                >
-                  View Collection
-                </Link> */}
-              </div>
             </div>
           </div>
         </div>

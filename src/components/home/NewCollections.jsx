@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import axios from "axios";
-import Skeleton from "../ui/Skeleton";
 import CollectionCard from "../ui/CollectionCard";
 import CollectionCardSkeleton from "../ui/CollectionCardSkeleton";
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 export default function NewCollections() {
   const [newCollection, setNewCollection] = useState([]);
@@ -23,8 +23,6 @@ export default function NewCollections() {
       setNewCollection(newCollectionData);
 
       setLoading(false);
-
-      console.log(newCollectionData);
     } catch (error) {
       alert(error);
     }
@@ -33,14 +31,23 @@ export default function NewCollections() {
   useEffect(() => {
     fetchNewCollection();
     setLoading(true);
+    AOS.init({
+      duration: 1000,
+    });
   }, []);
 
   return (
     <section id="new-collections">
       <div className="container">
         <div className="row">
-          <h2 className="new-collections__title">New Collections</h2>
-          <div className="new-collections__body">
+          <h2 className="new-collections__title" data-aos="fade-up">
+            New Collections
+          </h2>
+          <div
+            className="new-collections__body"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <Swiper
               navigation={true}
               modules={[Navigation]}
