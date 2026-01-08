@@ -1162,12 +1162,11 @@ footer {
 }
 
 .collection-page__button {
-  margin: 0 auto;
-  margin-bottom: 36px;
+  margin: 0 auto 36px;
   min-height: 100%;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgb(24, 104, 183);
+  background-color: rgb(24, 104, 186);
   display: flex;
   align-items: center;
   justify-content: center;

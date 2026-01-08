@@ -111,7 +111,7 @@ export default function CollectionItems({ collection, loading }) {
       </div>
       {listLength < collection?.items.length && (
         <button
-          className="collections-page__button"
+          className="collection-page__button"
           onClick={() => setListLength(listLength + 6)}
         >
           Load more
