@@ -36,8 +36,10 @@ export default function ItemPage() {
 
       setSaleTime(`${hours}h ${minutes}m ${seconds}s`);
     }
-
-    setInterval(updateTime, 1000);
+    updateTime()
+    const interval = setInterval(updateTime, 100)
+  
+    return () => clearInterval(interval)
   }, [item?.expiryDate]);
 
   useEffect(() => {
@@ -68,7 +70,6 @@ export default function ItemPage() {
 
   return (
     <>
-    <button onClick={() => setLoading(!loading)}>Button</button>
       {loading ? (
         <>
           <section id="item-info">

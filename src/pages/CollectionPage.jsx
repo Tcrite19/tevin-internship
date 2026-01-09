@@ -40,7 +40,6 @@ export default function CollectionPage() {
 
   return (
     <>
-    <button onClick={() => setLoading(!loading)}>button</button>
       <CollectionHeader collection={collection} loading={loading} />
       <CollectionInfo collection={collection} loading={loading} />
       <CollectionItems itemList={itemList} setItemList={setItemList} loading={loading} />
