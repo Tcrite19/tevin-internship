@@ -68,6 +68,7 @@ export default function ItemPage() {
 
   return (
     <>
+    <button onClick={() => setLoading(!loading)}>Button</button>
       {loading ? (
         <>
           <section id="item-info">

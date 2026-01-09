@@ -529,13 +529,6 @@ html {
   box-sizing: content-box;
 }
 
-.swiper-slide {
-  display: flex;
-  height: auto;
-  align-items: stretch;
-  justify-content: center;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
