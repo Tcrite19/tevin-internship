@@ -518,7 +518,6 @@ html {
 
 .swiper {
   width: 100%;
-  padding: 40px 0;
 }
 
 .swiper-wrapper {
@@ -528,13 +527,6 @@ html {
   z-index: 1;
   display: flex;
   box-sizing: content-box;
-}
-
-.swiper-slide {
-  display: flex;
-  height: auto;
-  align-items: stretch;
-  justify-content: center;
 }
 
 .swiper-button-prev,
@@ -1162,12 +1154,11 @@ footer {
 }
 
 .collection-page__button {
-  margin: 0 auto;
-  margin-bottom: 36px;
+  margin: 0 auto 36px;
   min-height: 100%;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgb(24, 104, 183);
+  background-color: rgb(24, 104, 186);
   display: flex;
   align-items: center;
   justify-content: center;

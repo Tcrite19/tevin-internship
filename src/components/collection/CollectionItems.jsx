@@ -5,23 +5,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../ui/Skeleton";
 
-export default function CollectionItems({ collection, loading }) {
+export default function CollectionItems({ itemList, setItemList, loading }) {
   const [listLength, setListLength] = useState(12);
   const [sort, setSort] = useState("");
-  const [sortedItemList, setSortedItemList] = useState([collection?.items]);
 
   function sortItemList() {
     if (sort === "HIGH_TO_LOW") {
-      setSortedItemList(
-        collection?.items.slice().sort((a, b) => b.price - a.price)
+      setItemList(
+        itemList.slice().sort((a, b) => b.price - a.price)
       );
     } else if (sort === "LOW_TO_HIGH") {
-      setSortedItemList(
-        collection?.items.slice().sort((a, b) => a.price - b.price)
+      setItemList(
+        itemList.slice().sort((a, b) => a.price - b.price)
       );
-    } else {
-      setSortedItemList(collection?.items);
-    }
+    } 
   }
 
 
@@ -40,7 +37,7 @@ export default function CollectionItems({ collection, loading }) {
               Live
             </span>
             <span className="collection-items__header__results">
-              {collection?.items.length} results
+              {itemList.length} results
             </span>
           </div>
           <select
@@ -81,7 +78,7 @@ export default function CollectionItems({ collection, loading }) {
                   </div>
                 </div>
               ))
-            : sortedItemList?.slice(0, listLength).map((e, index) => (
+            : itemList?.slice(0, listLength).map((e, index) => (
                 <div key={index} className="item-column">
                   <Link to={`/item/${e?.itemId}`} key={index} className="item">
                     <figure className="item__img__wrapper">
@@ -109,9 +106,9 @@ export default function CollectionItems({ collection, loading }) {
               ))}
         </div>
       </div>
-      {listLength < collection?.items.length && (
+      {listLength < itemList.length && (
         <button
-          className="collections-page__button"
+          className="collection-page__button"
           onClick={() => setListLength(listLength + 6)}
         >
           Load more
