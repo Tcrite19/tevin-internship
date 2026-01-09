@@ -6,7 +6,7 @@ import axios from "axios";
 import CollectionCard from "../ui/CollectionCard";
 import CollectionCardSkeleton from "../ui/CollectionCardSkeleton";
 import AOS from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 
 export default function NewCollections() {
   const [newCollection, setNewCollection] = useState([]);
@@ -49,36 +49,19 @@ export default function NewCollections() {
             data-aos-delay="100"
           >
             <Swiper
-              navigation={true}
+              navigation
               modules={[Navigation]}
+              loopAddBlankSlides={false}
               slidesPerView={6}
-              spaceBetween={16}
-              loop={true}
+              spaceBetween={12}
+              loop
               breakpoints={{
-                0: {
-                  width: 0,
-                  slidesPerView: 1,
-                },
-                368: {
-                  width: 368,
-                  slidesPerView: 1,
-                },
-                768: {
-                  width: 768,
-                  slidesPerView: 2,
-                },
-                1024: {
-                  width: 992,
-                  slidesPerView: 3,
-                },
-                1220: {
-                  width: 1220,
-                  slidesPerView: 4,
-                },
-                1440: {
-                  width: 1440,
-                  slidesPerView: 5,
-                },
+                0: { slidesPerView: 1 },
+                480: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1020: { slidesPerView: 4 },
+                1200: { slidesPerView: 5 },
+                1600: { slidesPerView: 6 },
               }}
             >
               {loading

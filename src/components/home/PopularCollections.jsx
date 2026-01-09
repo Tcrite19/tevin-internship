@@ -52,30 +52,12 @@ export default function PopularCollections() {
             spaceBetween={16}
             loop={true}
             breakpoints={{
-              0: {
-                width: 0,
-                slidesPerView: 1,
-              },
-              368: {
-                width: 368,
-                slidesPerView: 1,
-              },
-              768: {
-                width: 768,
-                slidesPerView: 2,
-              },
-              1024: {
-                width: 992,
-                slidesPerView: 3,
-              },
-              1220: {
-                width: 1220,
-                slidesPerView: 4,
-              },
-              1440: {
-                width: 1440,
-                slidesPerView: 5,
-              },
+              0: { slidesPerView: 1 },
+              480: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1020: { slidesPerView: 4 },
+              1200: { slidesPerView: 5 },
+              1600: { slidesPerView: 6 },
             }}
           >
             {loading
