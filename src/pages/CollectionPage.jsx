@@ -8,6 +8,7 @@ import axios from "axios";
 export default function CollectionPage() {
   const { id } = useParams();
   const [collection, setCollection] = useState(null);
+  const [itemList, setItemList] = useState([])
   const [loading, setLoading] = useState(false);
 
  async function fetchCollection() {
@@ -18,7 +19,12 @@ export default function CollectionPage() {
 
       const collectionData = data.data;
 
+
       setCollection(collectionData);
+
+      setItemList(collectionData.items)
+
+      console.log(collectionData.items)
 
       setLoading(false);
     } catch (error) {
@@ -34,9 +40,10 @@ export default function CollectionPage() {
 
   return (
     <>
+    <button onClick={() => setLoading(!loading)}>button</button>
       <CollectionHeader collection={collection} loading={loading} />
       <CollectionInfo collection={collection} loading={loading} />
-      {collection && <CollectionItems collection={collection} loading={loading} />}
+      <CollectionItems itemList={itemList} setItemList={setItemList} loading={loading} />
     </>
   );
 }
